@@ -1,0 +1,49 @@
+.new-tweet{
+  padding-top: 25px;
+  display:flex;
+  margin-top: 5em;
+  flex-wrap: wrap;
+  flex-direction:column ;
+  width:100%;
+  font-weight: 650;
+  font-family: 'Source Sans Pro';
+  
+}
+
+#tweet-text{
+  
+  display:flex;
+  align-items: stretch;
+  background-color:#d7d7d7ef;
+  outline: 0;
+  border-width: 0 0 4px;
+  border-color: rgb(3, 3, 3);
+  width: 100%;
+  font-weight: 550;
+  font-size: 80%;
+  resize: none;
+ 
+}
+
+
+.formBottom{
+  padding-top: 25px;
+  display:flex;
+  justify-content: space-between;
+  font-family: 'Bungee';
+
+  }
+  .submitButton {
+    background-color: blue;
+   
+    color:aliceblue;
+    border-radius: 10px;
+    font-size: 90%;
+    padding: 10px ;
+    
+
+  }
+
+.overMax{
+  color:red;
+}

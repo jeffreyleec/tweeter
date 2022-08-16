@@ -1,0 +1,117 @@
+.tweet-container{
+  display:flex;
+  margin-top: 2.5em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items:flex-start;
+  width:100%;
+  height:19rem;
+
+  font-family: 'Source Sans Pro';
+  border: 5px solid black;
+  
+}
+.tweet-container:hover{
+  
+  
+  -webkit-box-shadow: 10px 10px 0px -2px #8AA3AB; 
+box-shadow: 10px 10px 0px -2px #8AA3AB;
+
+}
+
+
+.tweet-container > header {
+  width:100%;
+  font-family: 'Source Sans Pro';
+  height:8rem;
+  /* background-color: beige; */
+  display:flex;
+  flex-direction: row ;
+  justify-content: space-between;
+  padding:1rem;
+  align-items: center;
+ 
+  
+}
+
+
+.identity {
+  display:flex;
+  flex-direction: row ;
+}
+
+.name {
+  padding-top: 1rem;
+  padding-left: 1rem;
+
+}
+.tagHandle {
+  
+  align-items: flex-end;
+  padding-right: 1em;
+ 
+
+}
+
+
+
+
+
+.tweetContentById {
+  flex-wrap: wrap;
+  /* background-color: aqua; */
+  font-weight: bold;
+  border-bottom: .5rem solid black;
+  
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  align-items: center;
+  
+  align-self: center;
+  
+
+  width:95%;
+}
+
+
+
+
+.tweet-container > footer {
+
+  /* background-color: rgb(225, 173, 225); */
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0em;
+  height:3rem;
+  width:95%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row ;
+  align-self: center;
+  justify-content: space-between ;
+
+
+}
+
+footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row ;
+  align-self: center;
+  justify-content: space-between ;
+}
+
+
+#icon1:hover{
+  color:goldenrod;
+
+}
+#icon2:hover{
+  color:goldenrod;
+
+}
+#icon3:hover{
+  color:goldenrod;
+
+}
