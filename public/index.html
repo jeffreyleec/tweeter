@@ -5,14 +5,17 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <!-- timeago -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
-    
+
   <!-- fonts  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
 
   <!-- App CSS -->
@@ -21,11 +24,14 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- char counter  JS -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
 
   <!-- nav CSS -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -33,15 +39,20 @@
   <!-- new-tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
- <!-- tweet CSS -->
- <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <!-- tweet CSS -->
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
 
-   <!-- header CSS -->
-   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <!-- header CSS -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
   <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
 
 </head>
 
@@ -52,10 +63,10 @@
     <div class="navstuff">
       <span><strong>Write</strong> a new tweet </span>
       <div><i class="fa-solid fa-angles-down" id="doubleArrow"></i></div>
-      
-      
+
+
     </div>
-   
+
   </nav>
 
 
@@ -64,13 +75,13 @@
 
   <header class="profileHeader">
     <div>
-        <!-- <img src="/images/profile-hex.png">  -->
-        <img src="/images/profile-hex.png">
-        
-      </div>
+      <!-- <img src="/images/profile-hex.png">  -->
+      <img id="currentProfilePic" src="/images/profile-hex.png">
+
+    </div>
     <br>
     <div>
-        <h2>Girl</h2>
+      <h2 id="currentProfileName">Girl</h2>
     </div>
   </header>
 
@@ -79,24 +90,24 @@
 
 
   <!-- Page-specific (main) content here -->
-  
+
   <main class="container">
-     
-      <section class="new-tweet">
-          <form method="POST" action="/tweets/">
+
+    <section class="new-tweet">
+      <form method="POST" action="/tweets/">
         <div class="formTop">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea> 
+          <textarea name="text" id="tweet-text"></textarea>
         </div>
-          
-          <div class="formBottom">
-            <button type="submit" class="submitButton">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text" class="status">140</output>
-          </div>
-        </form>
-      </section>
 
-      <article class="tweet-container">
+        <div class="formBottom">
+          <button type="submit" class="submitButton">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text" class="status">140</output>
+        </div>
+      </form>
+    </section>
+
+    <!-- <article class="tweet-container">
         <header>
             <div class="identity">
               <div class="logo">
@@ -124,9 +135,9 @@
           </div>
         </footer>
 
-      </article>
+      </article> -->
 
-
+    <article id="tweetContainerID"></article>
 
 
   </main>

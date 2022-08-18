@@ -37,9 +37,3 @@ app.listen(PORT, () => {
 });
 
 
-// app.post("/tweets/", (req, res) => {
-
-
-//   req.session = null;
-//   return res.redirect('/urls');
-// });
