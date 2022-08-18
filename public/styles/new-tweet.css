@@ -1,4 +1,5 @@
 .new-tweet{
+  box-sizing: border-box;
   padding-top: 25px;
   display:flex;
   margin-top: 5em;
@@ -11,7 +12,7 @@
 }
 
 #tweet-text{
-  
+  box-sizing: border-box;
   display:flex;
   align-items: stretch;
   background-color:#d7d7d7ef;

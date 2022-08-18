@@ -36,7 +36,7 @@ $(document).ready(function () {
     //console.log($counter)
     $counter.text($remainingChar);
     //console.log($counter[0])
-    if ($remainingChar < 100) {
+    if ($remainingChar < 0) {
       $counter[0].classList.add("overMax")
     } else {
       $counter[0].classList.remove("overMax")

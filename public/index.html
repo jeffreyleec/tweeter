@@ -92,10 +92,11 @@
   <!-- Page-specific (main) content here -->
 
   <main class="container">
-
+    
     <section class="new-tweet">
       <form method="POST" action="/tweets/">
         <div class="formTop">
+          <section class="errorSection" id="textError">Error</section>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
         </div>
