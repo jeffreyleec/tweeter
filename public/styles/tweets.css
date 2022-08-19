@@ -5,11 +5,11 @@
   align-items: flex-start;
   width: 100%;
   height: 19rem;
-  
   font-family: "Source Sans Pro";
   border: 5px solid black;
   overflow-wrap: break-word;
   align-items: stretch
+  
 }
 .tweet-container:hover {
   -webkit-box-shadow: 10px 10px 0px -2px #8aa3ab;
@@ -58,7 +58,8 @@
   align-items: center;
   align-self: center;
   width: 95%;
-  align-items: stretch
+  align-items: stretch;
+  
 }
 
 .tweet-container > footer {

@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding-top: 60px;
   display: flex;
-  margin-top: 5em;
   flex-wrap: wrap;
   flex-direction: column;
   width: 100%;

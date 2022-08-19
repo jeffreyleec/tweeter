@@ -63,7 +63,9 @@
     <span>tweeter</span>
     <div class="navstuff">
       <span><strong>Write</strong> a new tweet </span>
-      <div><i class="fa-solid fa-angles-down" id="doubleArrow"></i></div>
+      <button type="button" class="btn btn-link" id="arrowBtn"><div><i class="fa-solid fa-angles-down" id="doubleArrow"></i></div></button>
+
+      <!-- <div><i class="fa-solid fa-angles-down" id="doubleArrow"></i></div> -->
 
 
     </div>
@@ -94,7 +96,7 @@
 
   <main class="container">
     
-    <section class="new-tweet">
+    <section id="newTweetContainer" class="new-tweet">
       <form method="POST" action="/tweets/">
         <div class="formTop">
           <section  id="textError"></section>

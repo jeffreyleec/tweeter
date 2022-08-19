@@ -26,9 +26,7 @@ body {
   overflow-wrap: break-word;
 }
 
-.tweetParagraph {
-  overflow-wrap: break-word;
-}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -81,9 +79,42 @@ body {
     width: 70%;
     height: 100%;
     margin: 3rem;
+    margin-top:4em;
+  }
+
+
+}
+
+/*code below is for double arrow animation and onclick */
+@keyframes float {
+  0% {
+    transform: translatey(-2.5px);
+  }
+  50% {
+    transform: translatey(2.5px);
+  }
+  100% {
+    transform: translatey(-2.5px);
   }
 }
 
-/* innerNav
-profileHeader
-container */
+#doubleArrow{
+  transform: translatey(0px);
+  animation: float 2s ease-in-out infinite;
+}
+
+#arrowBtn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden; 
+}
+
+.disappear {
+  display: none 
+}
+
+
+
+

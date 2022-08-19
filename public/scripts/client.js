@@ -1,14 +1,10 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//creates new tweet with html template.
 const createTweetElement = function (tweetData) {
   const name = tweetData.user.name;
   const avatar = tweetData.user.avatars;
@@ -48,6 +44,7 @@ const createTweetElement = function (tweetData) {
 `;
 };
 
+//inital clear tweet, then loops and appends all posts in reverse order
 const renderTweets = function (tweets) {
   $("#tweetContainerID").empty();
 
@@ -56,6 +53,7 @@ const renderTweets = function (tweets) {
   }
 };
 
+//get request to load tweets
 const loadTweets = function () {
   $.ajax({
     method: "GET",
@@ -74,6 +72,8 @@ $(document).ready(function () {
 
   const myForm = document.querySelector("form");
   const textError = document.querySelector("#textError");
+
+  //submit button - onclick submit posts new tweet
   myForm.addEventListener("submit", function (event) {
     // repeat
     event.preventDefault();
@@ -82,6 +82,7 @@ $(document).ready(function () {
     let innertext = $("#tweet-text").serialize();
     let innertextVal = $("#tweet-text").val().length;
 
+    //new tweet input check
     if (innertextVal === 0) {
       document.getElementById("textError").innerHTML =
         '<i class="fa-solid fa-triangle-exclamation"></i>Please enter some text!<i class="fa-solid fa-triangle-exclamation"></i>';
@@ -97,12 +98,12 @@ $(document).ready(function () {
       textError.classList.remove("errorSection");
     }
 
+    //POST request for new tweet
     $.ajax({
       method: "POST",
       url: "http://localhost:8080/tweets/",
       data: innertext,
-    })
-    .then((response) => {
+    }).then((response) => {
       loadTweets();
       $remainingChar = 140;
       $(".counter").val($remainingChar);
@@ -110,5 +111,19 @@ $(document).ready(function () {
     });
 
     //.catch(error => console.error(error));
+  });
+  let eventVal = false;
+  const arrowSubmit = document.querySelector("#arrowBtn");
+  const containerBox = document.querySelector("#newTweetContainer");
+
+  arrowSubmit.addEventListener("click", function (event) {
+    //arrow onclick feature for hiding posts container
+    if (eventVal === false) {
+      eventVal = true;
+      containerBox.classList.add("disappear");
+    } else if (eventVal === true) {
+      eventVal = false;
+      containerBox.classList.remove("disappear");
+    }
   });
 });
