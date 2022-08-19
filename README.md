@@ -18,4 +18,4 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 !['Tweet box smaller displays'](https://github.com/jeffreyleec/tweeter/blob/master/docs/Phone%20size%20tweet%20box%20.png)
-!['Tweet box larger displays'](https://github.com/jeffreyleec/tweeter/blob/master/docs/window%20size%20tweet%20box%20.pn)
+!['Tweet box larger displays'](https://github.com/jeffreyleec/tweeter/blob/master/docs/window%20size%20tweet%20box%20.png)
