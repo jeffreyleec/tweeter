@@ -1,6 +1,6 @@
 .innerNav {
   font-family: 'Bungee';
-  height: 120px;
+  height: 7.5rem;
   width: 100%;
   background-color: #edab26;
   color: #FFFFFF; 
@@ -10,6 +10,7 @@
   justify-content: space-between; 
   align-items:center;
   position: fixed;
+  font-size: 2rem;
   z-index: 2;
   top:0;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");

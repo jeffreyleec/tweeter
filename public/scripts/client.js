@@ -45,21 +45,16 @@ const createTweetElement = function (tweetData) {
           <i id="icon3" class="fa-solid fa-heart"></i>
         </div>
       </footer>
-`
-
-
-}
+`;
+};
 
 const renderTweets = function (tweets) {
-
-  $('#tweetContainerID').empty();
+  $("#tweetContainerID").empty();
 
   for (let i = tweets.length - 1; i >= 0; i--) {
-    $('#tweetContainerID').append(createTweetElement(tweets[i]))
+    $("#tweetContainerID").append(createTweetElement(tweets[i]));
   }
-
-
-}
+};
 
 const loadTweets = function () {
   $.ajax({
@@ -67,85 +62,53 @@ const loadTweets = function () {
     url: "http://localhost:8080/tweets/",
   })
 
-    .then(response => {
+    .then((response) => {
       renderTweets(response);
     })
 
-    .catch(error => console.error(error));
-
-}
-
-
-
+    .catch((error) => console.error(error));
+};
 
 $(document).ready(function () {
   loadTweets();
 
-
-  const myForm = document.querySelector('form');
-  myForm.addEventListener('submit', function (event) {
-
+  const myForm = document.querySelector("form");
+  const textError = document.querySelector("#textError");
+  myForm.addEventListener("submit", function (event) {
     // repeat
     event.preventDefault();
 
-    $('#tweet-text').text($('#tweet-text').val());
-    let innertext = $('#tweet-text').serialize()
-    let innertextVal = $('#tweet-text').val().length
+    $("#tweet-text").text($("#tweet-text").val());
+    let innertext = $("#tweet-text").serialize();
+    let innertextVal = $("#tweet-text").val().length;
 
-    
-    
     if (innertextVal === 0) {
-      document.getElementById("textError").innerHTML = 'Please enter some text!';
-      return
+      document.getElementById("textError").innerHTML =
+        '<i class="fa-solid fa-triangle-exclamation"></i>Please enter some text!<i class="fa-solid fa-triangle-exclamation"></i>';
+      textError.classList.add("errorSection");
+      return;
     } else if (innertextVal > 140) {
-      document.getElementById("textError").innerHTML = 'Too Much Test!';
-      return
+      document.getElementById("textError").innerHTML =
+        '<i class="fa-solid fa-triangle-exclamation"></i>Too Much Test!<i class="fa-solid fa-triangle-exclamation"></i>';
+      textError.classList.add("errorSection");
+      return;
     } else {
-      document.getElementById("textError").innerHTML = '';
-      
+      document.getElementById("textError").innerHTML = "";
+      textError.classList.remove("errorSection");
     }
-
-
-
-
-
-
-
-
-
 
     $.ajax({
       method: "POST",
       url: "http://localhost:8080/tweets/",
       data: innertext,
-
     })
+    .then((response) => {
+      loadTweets();
+      $remainingChar = 140;
+      $(".counter").val($remainingChar);
+      $("#tweet-text").val("");
+    });
 
-
-      .then(response => {
-        loadTweets();
-        $remainingChar = 140;
-        $(".counter").val($remainingChar);
-        $("#tweet-text").val('');
-
-      })
-
-      //.catch(error => console.error(error));
-
+    //.catch(error => console.error(error));
   });
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

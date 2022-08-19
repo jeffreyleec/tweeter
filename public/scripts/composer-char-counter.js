@@ -1,30 +1,4 @@
-// $(document).ready(function() {
-//   // --- our code goes here ---
 
-//   let countMax = 140
-//   $("#tweet-text").on('keypress', function(event) {
-//     //console.log(event.originalEvent.key,' was clicked')
-//     //console.log(this); //The this keyword is a reference to the button
-//     // if(event.originalEvent.key){
-//     //   $(.counter)
-//     // }
-//     //count -= event.target.value.length 
-
-//     //console.log(this.value.length + 1)
-
-//     let countLeft = countMax - (this.value.length + 1)   
-//     console.log(countLeft)
-//     //return countLeft;
-
-//     document.querySelector('.counter').innerHTML = countLeft
-//     if(countLeft > 0 && countLeft <= 140){
-//       count.setAttribute('status', notOverMax)
-//     } else {
-//       count.setAttribute('status', notOverMax)
-//     }
-
-//   });
-// });
 $(document).ready(function () {
   let maxCounter = 140;
   let $remainingChar;
